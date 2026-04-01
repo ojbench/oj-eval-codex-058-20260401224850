@@ -161,7 +161,6 @@ public:
             throw ArgumentException(msg.c_str());
         }
         if (idIndex.find(id)!=idIndex.end()) return false;
-        Pokemon p{}; std::strncpy(p.name, name, sizeof(p.name)-1); p.name[sizeof(p.name)-1]=0;
         p.id = id;
         std::unordered_set<std::string> seen;
         for (auto &t: v){ if (seen.insert(t).second) p.types.push_back(t); }
